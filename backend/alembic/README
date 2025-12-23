@@ -1,0 +1,6 @@
+Alembic migrations for Portal22 backend.
+
+Run:
+  alembic init alembic
+  alembic revision --autogenerate -m "init"
+  alembic upgrade head
