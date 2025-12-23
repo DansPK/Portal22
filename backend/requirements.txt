@@ -7,3 +7,4 @@ python-dotenv>=1.0.0
 passlib[bcrypt]>=1.7.4
 cryptography>=41.0.0
 httpx>=0.25.0
+argon2-cffi>=21.3.0

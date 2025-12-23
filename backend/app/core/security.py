@@ -2,8 +2,8 @@ from passlib.context import CryptContext
 from cryptography.fernet import Fernet
 import base64
 
-# Use a portable, pure-Python hash to avoid platform-specific bcrypt issues on Windows
-pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
+# Prefer Argon2id for new hashes; keep pbkdf2_sha256 for verifying existing ones
+pwd_context = CryptContext(schemes=["argon2", "pbkdf2_sha256"], deprecated="auto")
 
 
 def hash_password(password: str) -> str:
