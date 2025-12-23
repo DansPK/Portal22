@@ -26,6 +26,17 @@ class User(Base):
     sessions = relationship(
         "UserSession", back_populates="user", cascade="all, delete-orphan"
     )
+    
+    # Phase 1.2: SSH connection management
+    connections = relationship(
+        "Connection", back_populates="user", cascade="all, delete-orphan"
+    )
+    ssh_keys = relationship(
+        "SSHKey", back_populates="user", cascade="all, delete-orphan"
+    )
+    ssh_sessions = relationship(
+        "SSHSession", back_populates="user", cascade="all, delete-orphan"
+    )
 
 
 class UserSession(Base):
